@@ -1,4 +1,6 @@
-public class Weapon {
+import java.util.Random;
+
+public class Weapon{
     private String name;
     private int id ;
     private int damage;
@@ -27,7 +29,6 @@ public class Weapon {
         }
         return null;
     }
-
     public String getName() {
         return name;
     }

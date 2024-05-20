@@ -14,4 +14,5 @@ public class Snake extends Obstacle {
         Random rand = new Random();
         return rand.nextInt(3,7) ;
     }
+
 }

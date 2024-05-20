@@ -5,7 +5,6 @@ public class BattleLoc extends Location{
     private  Obstacle obstacle ;
     private String locAward;
     private int maxObstacle;
-    private boolean visited ;
 
     public BattleLoc(Player player, String name , Obstacle obstacle, String locAward, int maxObstacle) {
         super(player, name);
@@ -46,10 +45,6 @@ public class BattleLoc extends Location{
         System.out.print("<S>avaş veya <K>aç : ");
         String selectCase = input.nextLine().toUpperCase();
         if(selectCase.equals("S") && combat(obsNumber)){
-            System.out.println(this.getName() + " tüm düşmanları yendiniz !");
-            // Ödülü envantere ekle
-            getPlayer().getInventory().addAward(getLocAward());
-            System.out.println("Bölüm Sonu Ödülünüz : "+getLocAward());
             return true;
         }
         if(this.getPlayer().getHealth() <= 0){
@@ -75,7 +70,7 @@ public class BattleLoc extends Location{
                     if (playerAttacksFirst) {
                         playerAttack();
                         if (getObstacle().getHealth() <= 0) {
-                            return true; // Oyuncu düşmanı yendi
+                            continue; // Oyuncu düşmanı yendi
                         }
                         obstacleAttack();
                     } else {
@@ -92,19 +87,81 @@ public class BattleLoc extends Location{
 
             if (getObstacle().getHealth() <= 0) {
                 System.out.println("Düşmanı Yendiniz ! ");
-                System.out.println(getObstacle().getObsAward() + " para kazandınız ! ");
-                getPlayer().setMoney(getPlayer().getMoney() + getObstacle().getObsAward());
-                System.out.println(getObstacle().getObsAward() + " kazandınız ! ");
+                if (getObstacle() instanceof Snake) {
+                    String reward = getRandomReward();
+                    System.out.println(reward + " kazandınız !" );
+                    playerStats();
+                    if (reward == "") {
+                        System.out.println("Hiçbir şey kazanamadınız.");
+                    }
+                }else{
+                    System.out.println(getObstacle().getObsAward() + " para kazandınız ! ");
+                    getPlayer().setMoney(getPlayer().getMoney() + getObstacle().getObsAward());
+                    System.out.println("Güncel durumunuz : " );
+                    playerStats();
+                    System.out.println("-----------------------");
+                }
 
-
-                System.out.println("Güncel Paranız : " + getPlayer().getMoney());
-                System.out.println("-----------------------");
             } else {
                 return false; // Oyuncu kaybetti
             }
         }
+        if (getObstacle() instanceof Snake) {
+            String reward = getRandomReward();
+            System.out.println("Bölüm Sonu Ödülünüz : " + reward);
+            if (reward == "") {
+                System.out.println("Hiçbir şey kazanamadınız.");
+            }
+        }else {
+            System.out.println(this.getName() + " tüm düşmanları yendiniz !");
+            // Ödülü envantere ekle
+            getPlayer().getInventory().addAward(getLocAward());
+            System.out.println("Bölüm Sonu Ödülünüz : " + getLocAward());
+        }
 
         return true; // Tüm düşmanlar yenildi
+    }
+    public String getRandomReward() {
+        Random rand = new Random();
+        int chance = rand.nextInt(100);// 0 ile 9 arasında rastgele bir sayı alır
+        int randAwards = rand.nextInt(100);//seçilen zırh ,silah veya paranın ne olacağını belirlemek iin
+        if (chance <= 15) {
+            if (randAwards < 20){
+                getPlayer().getInventory().setWeapon(Weapon.getWeaponObjID(3));
+                return "Tüfek";
+            } else if (randAwards > 20 && randAwards < 50 ) {
+                getPlayer().getInventory().setWeapon(Weapon.getWeaponObjID(2));
+                return "Kılıç";
+            }else{
+                getPlayer().getInventory().setWeapon(Weapon.getWeaponObjID(1));
+                return "Tabanca";
+            }
+        } else if (chance > 15 && chance < 30) {
+            if (randAwards < 20){
+                getPlayer().getInventory().setArmor(Armor.getArmorObjID(3));
+                return "Ağır Zırh";
+            } else if (randAwards > 20 && randAwards < 50 ) {
+                getPlayer().getInventory().setArmor(Armor.getArmorObjID(2));
+                return "Orta Zırh";
+            }else{
+                getPlayer().getInventory().setArmor(Armor.getArmorObjID(1));
+                return "Hafif Zırh";
+            }
+        } else if (chance > 30 && chance < 55) {
+            if (randAwards < 20){
+                getPlayer().setMoney(getPlayer().getMoney() + 10);
+                return "10 para";
+            } else if (randAwards > 20 && randAwards < 50 ) {
+                getPlayer().setMoney(getPlayer().getMoney() + 5);
+                return "5 para";
+            }else{
+                getPlayer().setMoney(getPlayer().getMoney() + 1);
+                return "1 para";
+            }
+        }
+
+        return ""; // Hiçbir şey kazanılmadı
+
     }
     public void afterHit(){
         System.out.println("Canınız: " + this.getPlayer().getHealth());

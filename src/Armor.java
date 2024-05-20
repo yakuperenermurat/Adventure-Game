@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Armor {
     private int id;
     private int block;
@@ -26,7 +28,6 @@ public class Armor {
         }
         return null;
     }
-
     public int getId() {
         return id;
     }

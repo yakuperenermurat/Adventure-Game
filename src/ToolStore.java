@@ -25,6 +25,7 @@ public class ToolStore extends NormalLoc{
                 case 2:
                     printArmor();
                     buyArmor();
+                    break;
                 case 3:
                     System.out.println("Bir daha bekleriz ! ");
                     showMenu = false;
@@ -65,7 +66,6 @@ public class ToolStore extends NormalLoc{
                 }
             }
         }
-
     }
     public void printArmor(){
         System.out.println("-------Zırhlar------");
@@ -74,16 +74,18 @@ public class ToolStore extends NormalLoc{
                     a.getPrice() + ", Zırh : " +
                     a.getBlock() + " > ");
         }
+        System.out.println("0 - Çıkış Yap ");
     }
     public void buyArmor(){
         System.out.println("Bir zırh seçiniz : ");
 
         int selectArmorID = input.nextInt();
-        while (selectArmorID < 1 || selectArmorID > Armor.armors().length) {
+        while (selectArmorID < 0 || selectArmorID > Armor.armors().length) {
             System.out.println("Geçersiz değer , tekrar giriniz : ");
             selectArmorID = input.nextInt();
         }
-        Armor selectedArmor = Armor.getArmorObjID(selectArmorID);
+        if(selectArmorID != 0 ) {
+            Armor selectedArmor = Armor.getArmorObjID(selectArmorID);
 
         if (selectedArmor != null){
             if (selectedArmor.getPrice() > this.getPlayer().getMoney()){
@@ -95,6 +97,7 @@ public class ToolStore extends NormalLoc{
                 this.getPlayer().getInventory().setArmor(selectedArmor);
                 System.out.println("Kalan paranız : " + getPlayer().getMoney());
             }
+        }
         }
     }
 }
