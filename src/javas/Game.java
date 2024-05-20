@@ -1,5 +1,7 @@
 package javas;
 
+import javas.locations.*;
+
 import java.util.Scanner;
 
 public class Game {

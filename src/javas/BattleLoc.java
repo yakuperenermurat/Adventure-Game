@@ -1,5 +1,9 @@
 package javas;
 
+import javas.armorAndweapon.Armor;
+import javas.armorAndweapon.Weapon;
+import javas.obstacles.Snake;
+
 import java.util.Random;
 
 public class BattleLoc extends Location{

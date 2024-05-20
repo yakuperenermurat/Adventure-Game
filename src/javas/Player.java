@@ -1,5 +1,9 @@
 package javas;
 
+import javas.characters.Archer;
+import javas.characters.Knight;
+import javas.characters.Samurai;
+
 import java.util.Scanner;
 
 public class Player {

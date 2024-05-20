@@ -1,6 +1,10 @@
-package javas;
+package javas.locations;
 
-public class ToolStore extends NormalLoc{
+import javas.*;
+import javas.armorAndweapon.Armor;
+import javas.armorAndweapon.Weapon;
+
+public class ToolStore extends NormalLoc {
     public ToolStore(Player player) {
         super(player, "Mağaza");
     }

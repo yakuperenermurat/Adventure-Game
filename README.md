@@ -6,17 +6,13 @@ Bu proje, basit bir Java tabanlı bir oyunu içerir. Oyuncuların farklı bölge
 Bu metin tabanlı macera oyununda, oyuncular çeşitli bölgelerde canavarlarla savaşarak ödüller toplar. Oyuncunun amacı, tüm bölgelerdeki ödülleri toplayarak Güvenli Ev'e dönmektir. Oyuncu, savaş bölgelerindeki tüm düşmanları yendikten sonra bölgeye özel ödülü envanterine ekler. Tüm ödülleri topladıktan sonra Güvenli Ev'e dönen oyuncu oyunu kazanır. Ödül kazanılan bölgeye tekrar giriş yapılamaz.
 
 ### Karakterler
-![Ekran Resmi 2024-05-20 13.58.24.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F5g%2Fhscsctc90bs4cd5mb3rry76h0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_of67IZ%2FEkran%20Resmi%202024-05-20%2013.58.24.png)
-
+![Karakterler.png](Karakterler.png)
 ### Canavarlar
-![Ekran Resmi 2024-05-20 13.58.05.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F5g%2Fhscsctc90bs4cd5mb3rry76h0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_uGLpDM%2FEkran%20Resmi%202024-05-20%2013.58.05.png)
-
+![Canavarlar.png](Canavarlar.png)
 ### Silahlar
-![Ekran Resmi 2024-05-20 13.58.58.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F5g%2Fhscsctc90bs4cd5mb3rry76h0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_LMZHU0%2FEkran%20Resmi%202024-05-20%2013.58.58.png)
-
+![Silahlar.png](Silahlar.png)
 ### Zırhlar
-![Ekran Resmi 2024-05-20 13.59.42.png](..%2F..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F5g%2Fhscsctc90bs4cd5mb3rry76h0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_WXKsGd%2FEkran%20Resmi%202024-05-20%2013.59.42.png)
-
+![Zırhlar.png](Z%C4%B1rhlar.png)
 ## Mekanlar
 
 - Güvenli Ev

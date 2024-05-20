@@ -1,5 +1,8 @@
 package javas;
 
+import javas.armorAndweapon.Armor;
+import javas.armorAndweapon.Weapon;
+
 import java.util.ArrayList;
 import java.util.List;
 

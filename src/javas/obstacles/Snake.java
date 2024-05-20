@@ -1,4 +1,6 @@
-package javas;
+package javas.obstacles;
+
+import javas.Obstacle;
 
 import java.util.Random;
 

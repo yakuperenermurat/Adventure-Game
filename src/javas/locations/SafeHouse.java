@@ -1,4 +1,7 @@
-package javas;
+package javas.locations;
+
+import javas.NormalLoc;
+import javas.Player;
 
 public class SafeHouse extends NormalLoc {
     public SafeHouse(Player player) {

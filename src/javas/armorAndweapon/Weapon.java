@@ -1,4 +1,4 @@
-package javas;
+package javas.armorAndweapon;
 
 public class Weapon{
     private String name;
