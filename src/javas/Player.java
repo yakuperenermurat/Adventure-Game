@@ -1,3 +1,5 @@
+package javas;
+
 import java.util.Scanner;
 
 public class Player {

@@ -1,3 +1,5 @@
+package javas;
+
 public class ToolStore extends NormalLoc{
     public ToolStore(Player player) {
         super(player, "Mağaza");

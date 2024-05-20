@@ -1,3 +1,5 @@
+package javas;
+
 public abstract class GameCharacter {
    private int id;
    private String name;

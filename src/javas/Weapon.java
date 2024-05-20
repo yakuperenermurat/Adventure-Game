@@ -1,4 +1,4 @@
-import java.util.Random;
+package javas;
 
 public class Weapon{
     private String name;

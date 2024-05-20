@@ -1,3 +1,5 @@
+package javas;
+
 import java.util.Random;
 
 public class BattleLoc extends Location{

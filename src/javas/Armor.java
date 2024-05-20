@@ -1,4 +1,4 @@
-import java.util.Random;
+package javas;
 
 public class Armor {
     private int id;
